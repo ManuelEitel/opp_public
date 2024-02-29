@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QDialog" name="LoginWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(11, 0, 57);</string>
+  </property>
+  <widget class="QLabel" name="label_email">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+   <property name="text">
+    <string>Email*:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_password">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+   <property name="text">
+    <string>Password*:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="signUp_button_login">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>351</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+   <property name="text">
+    <string>Sign Up</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_signUpView_userFeedback">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>300</y>
+     <width>351</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(11, 0, 57);color:rgb(255, 0, 0);font-size:12pt;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="signUp_email">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>120</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="signUp_password">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>160</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_password_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+   <property name="text">
+    <string>Password*:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="signUp_password2">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>200</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="signUp_button_back">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>350</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:18pt;</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

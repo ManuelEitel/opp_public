@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>331</width>
+    <height>346</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(11, 0, 57);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="delete_dialog_usertype">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(4, 255, 0);color:rgb(117, 2, 2);font-size:12pt;</string>
+     </property>
+     <property name="text">
+      <string>Operator</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_7">
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <stylestrategy>PreferDefault</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 117, 119); color: rgb(126, 255, 141); font-size: 20pt
+</string>
+     </property>
+     <property name="text">
+      <string>Delete Order?</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="delete_dialog_id_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="delete_dialog_id">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="delete_dialog_customer_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Customer</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="delete_dialog_customer">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Customer</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="delete_dialog_progress_3">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>workflow</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="delete_dialog_workflow">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>workflow</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="delete_dialog_progress_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Progress</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="delete_dialog_progress">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Progress</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="delete_dialog_marker1_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Marker1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="delete_dialog_marker1">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Marker1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="delete_dialog_marker2_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Marker2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="delete_dialog_marker2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Marker2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="delete_dialog_due_date_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Due Date</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="delete_dialog_due_date">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Due Date</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="delete_dialog_due_date_3">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Notes</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLabel" name="delete_dialog_notes">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:10pt;</string>
+        </property>
+        <property name="text">
+         <string>Notes</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(83, 100, 176);</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="delete_dialog_delete">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:12pt;</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_dialog_back">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(149, 38, 30); background-color: rgb(241, 224, 255);font-size:12pt;</string>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
