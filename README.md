@@ -3,6 +3,7 @@ This application does still need some hours of work. Beware!
 
 This is a software that is freely usable for anyone - I've written every line of code myself and intend to further this tool over the time to come.
 It is not ready by any means. The finished V1.0 is to be expected within the next few weeks (Today is Febr. 29th 2024). 
+I will also make a small video about the usage of the software. It needs to be used properly to be effective.
 
 What's this?
 * A tool for a company of mid size, that produces non standart products of any kind, that helps organizing the work steps for the Operations Manager, or whoever makes the ToDos for the production colleagues.
