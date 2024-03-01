@@ -1,5 +1,6 @@
 Published at 75% of being at v1.0
 This application does still need some hours of work. Beware!
+First video about the UI and it's usage is ready in explain_vid_pre_v1.0.mp4 
 
 This is a software that is freely usable for anyone - I've written every line of code myself and intend to further this tool over the time to come.
 It is not ready by any means. The finished V1.0 is to be expected within the next few weeks (Today is Febr. 29th 2024). 
