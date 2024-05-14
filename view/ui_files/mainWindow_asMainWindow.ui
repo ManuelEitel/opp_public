@@ -184,6 +184,25 @@ li.checked::marker { content: &quot;\2612&quot;; }
          </property>
         </widget>
        </item>
+       <item row="9" column="0">
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(189, 214, 255);</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="btn_week_view">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 157, 255);color:rgb(212, 255, 70);font-size:10pt;</string>
+            </property>
+            <property name="text">
+             <string>Week View</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>

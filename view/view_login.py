@@ -27,7 +27,6 @@ class ViewLogin(QDialog):
 
         self.loginView_btn_login.clicked.connect(self.btn_clicked)
 
-
     def btn_clicked(self):
         """
         Signal to ControlMain

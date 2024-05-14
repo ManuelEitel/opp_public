@@ -21,3 +21,4 @@ class DragDropWidget(QLabel):
         drag.setPixmap(pixmap)
 
         drag.exec(Qt.CopyAction)
+

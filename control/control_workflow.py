@@ -45,7 +45,7 @@ class ControlWorkflow(object):
 
     def put_wf_in_db(self):
         row_data = self.get_data_from_table_to_put_wf_in_db()
-
+        print(f'row_data = {row_data}')
         db = Database("databases/db_workflows.db")
         db.connect()
         table_name = self.wf_view.workflow_name_field.text()
@@ -61,6 +61,7 @@ class ControlWorkflow(object):
                     est_time VARCHAR (10),
                     linked_after VARCHAR(30), 
                     linked_before VARCHAR(30), 
+                    user_empty VARCHAR(30),
                     other VARCHAR(1000)
                 )
             """
@@ -121,7 +122,6 @@ class ControlWorkflow(object):
             i += 1
 
     def _setup_usertype(self):
-        print(f'self.model.current_user = {self.model.current_rights}')
         self.wf_view.label_user_type_workflow.setText(self.model.current_rights)
 
 

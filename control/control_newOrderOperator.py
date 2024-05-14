@@ -33,7 +33,6 @@ class ControlNewOrderOperator:
         highest_id = db.fetch_data(find_highest_id)
 
         if not highest_id:
-            print(f'this case')
             next_id = 1
         else:
             next_id = self.get_next_id(highest_id=highest_id)

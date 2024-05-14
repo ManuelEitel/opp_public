@@ -8,11 +8,9 @@ from PyQt5 import Qt
 class PutWorkflowOnOrder(object):
 
     def __init__(self, model):
-        print(f'got here 2')
         self.model = model
         self.wf_choosingView = WFChoosingView(self.model)
         self.wf_choosingView.show()
-        print(f'got here')
         self._fill_workflow_table()
 
     def _fill_workflow_table(self):

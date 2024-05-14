@@ -83,7 +83,25 @@ class ControlAdmin(object):
                 params = (name, password, right, "None yet", "0")
                 db.execute_query(query=query, params=params)
                 db.close()
+                self.create_user_db_and_table(name=name)
                 self.update_user_table()
+
+    @staticmethod
+    def create_user_db_and_table(name: str):
+        db = Database(f"databases/db_{name}_tasks.db")
+        db.connect()
+        query = """CREATE TABLE IF NOT EXISTS user_tasks (
+                        date CHAR(30),
+                        task CHAR(30),
+                        workflow CHAR(30),
+                        task_begin INT,
+                        task_end INT,
+                        order_name CHAR(30),
+                        deprecated INT
+                        )"""
+
+        db.execute_query(query)
+        db.close()
 
     def update_user_table(self):
 

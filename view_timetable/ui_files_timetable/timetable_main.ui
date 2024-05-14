@@ -19,7 +19,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="top_label">
       <property name="sizePolicy">
        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -27,7 +27,8 @@
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(252, 255, 243)</string>
+       <string notr="true">background-color:rgb(252, 255, 243); 
+font: 12pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Weekly Timetable for employee Bob&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -64,10 +65,23 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(244, 242, 255)</string>
+          <string notr="true">background-color: rgb(244, 242, 255); font: 12pt &quot;Segoe UI&quot;;</string>
          </property>
          <property name="text">
           <string>&lt; Last week</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_week_date">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(244, 242, 255); font: 12pt &quot;Segoe UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Week</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -80,26 +94,10 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(244, 242, 255)</string>
+          <string notr="true">background-color: rgb(244, 242, 255); font: 12pt &quot;Segoe UI&quot;;</string>
          </property>
          <property name="text">
-          <string>Save time</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(244, 242, 255)</string>
-         </property>
-         <property name="text">
-          <string>Note</string>
+          <string>Save changes</string>
          </property>
         </widget>
        </item>
@@ -112,7 +110,7 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(244, 242, 255)</string>
+          <string notr="true">background-color: rgb(244, 242, 255); font: 12pt &quot;Segoe UI&quot;;</string>
          </property>
          <property name="text">
           <string>Next week &gt;</string>
@@ -200,12 +198,12 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="label_monday">
             <property name="focusPolicy">
              <enum>Qt::WheelFocus</enum>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px;</string>
+             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px; font: 12pt &quot;Segoe UI&quot;;</string>
             </property>
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Monday&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -216,9 +214,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="label_tuesday">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px;</string>
+             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px; font: 12pt &quot;Segoe UI&quot;;</string>
             </property>
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Tuesday&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -229,9 +227,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="label_wednesday">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px;</string>
+             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px; font: 12pt &quot;Segoe UI&quot;;</string>
             </property>
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Wednesday&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -242,9 +240,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="label_thursday">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px;</string>
+             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px; font: 12pt &quot;Segoe UI&quot;;</string>
             </property>
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Thursday&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -255,9 +253,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_5">
+           <widget class="QLabel" name="label_friday">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px;</string>
+             <string notr="true">background-color: rgb(155, 208, 255); border: 1px solid black; padding: 7px; font: 12pt &quot;Segoe UI&quot;;</string>
             </property>
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Friday&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

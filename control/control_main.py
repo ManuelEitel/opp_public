@@ -1,7 +1,7 @@
 from model.model_main import ModelMain
 from view.view_main import ViewMain
 from PyQt5.QtWidgets import QApplication
-from control.control_loginview import ControlLoginView
+from control.login_window import ControlLoginView
 import sys
 
 class ControlMain(object):
@@ -20,5 +20,4 @@ class ControlMain(object):
         self.view_main = ViewMain()
 
         self.ui_start_up = ControlLoginView(self.model_main, self.view_main)
-        # control_timetable_main_window = ControlTimetableMainWindow()  #ToDo: Integrate Widget after Users
         sys.exit(app.exec())

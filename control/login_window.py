@@ -1,5 +1,6 @@
 from control.control_mainwindow import ControlMainwindow
 from databases.datatase_handler import Database
+from control.control_user_tasks import ControlUserTasks
 
 
 class ControlLoginView(object):
@@ -29,17 +30,18 @@ class ControlLoginView(object):
             select_query = "SELECT * FROM table_users WHERE name = ? AND password = ?;"
             params = (username, password)
             rows = db.fetch_data(select_query, params)
-
             if rows[0][2] in self.model.rights_list:
-                # ToDo: Make the rights integrated via database.
-                """ Here the rights are being given """
+                """ Here the rights are being taken into decision making which window opens next """
                 self.model.current_rights = rows[0][2]
-                if self.model.current_rights == "admin":
+
+                if self.model.current_rights == "admin" or self.model.current_rights == "Operator":
                     self.login_admin_create_tables()
-                self.main_window = ControlMainwindow(self.model, self.view, self.model.current_rights)
-                self.view.view_login.close()
-                username = None
-                password = None
+                    self.main_window = ControlMainwindow(self.model, self.view, self.model.current_rights)
+                    self.view.view_login.close()
+
+                if self.model.current_rights == "User":
+                    self.main_window = ControlUserTasks(model=self.model, user_name=username)
+                    self.view.view_login.close()
 
     @staticmethod
     def set_up_db():
@@ -68,7 +70,7 @@ class ControlLoginView(object):
         db = Database("databases/db_main.db")
         db.connect()
         table_orders_statement = """CREATE TABLE IF NOT EXISTS table_orders (
-                id VARCHAR(10),
+                id INTEGER PRIMARY KEY,
                 name VARCHAR(30), 
                 progress VARCHAR(30), 
                 workflow VARCHAR(30),

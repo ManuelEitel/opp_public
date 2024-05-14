@@ -16,6 +16,8 @@ class MainWindowView(QMainWindow):
         super().__init__()
         loadUi("view/ui_files/mainWindow_asMainWindow.ui", self)
 
+        self.setWindowTitle("Overview")
+
         self.tableWidget.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.tableWidget.resizeColumnsToContents()
 

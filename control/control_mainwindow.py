@@ -9,6 +9,9 @@ from control.control_newOrderOperator import ControlNewOrderOperator
 from control.control_dialog import ControlDeleteOrder
 from control.control_putWorkflowOnOrder import PutWorkflowOnOrder
 from control.control_admin import ControlAdmin
+from control.control_distribute_task import ControlDistributeTask
+from control_timetable.control_user_overview_slector import ControlUserOverviewSelector
+from control.progress_tracker import ProgressTracking
 
 # databases stuff
 from databases.datatase_handler import Database
@@ -54,16 +57,25 @@ class ControlMainwindow:
         self.table_list = None
         self.admin_control = None
         self._set_up_rowcount()
+
         self._input_data_at_start()
+
         self.wf_choosingView = None
         self.control_put_workflow_on_order = None
         self.control_distribute_task_overview = None
+        self.control_distribute_task_tasks = None
+        self.control_time_table_mw = None
         self.mainWindowView.feedback_mw.setReadOnly(True)
+
         self.mainWindowView.distribute_wf_btn.clicked.connect(self.distribute_wf_btn_fct)
+        self.mainWindowView.btn_week_view.clicked.connect(self.open_week_window)
         self.mainWindowView.cell_clicked.connect(self.on_cell_clicked)
         self._setup_usertype()
         self.mainWindowView.mode_btn_clicked_del_wf.connect(self.update_wf)
         self._admin_menu_element_pressed()
+
+    def open_week_window(self):
+        self.control_time_table_mw = ControlUserOverviewSelector(self.model)
 
     def _admin_menu_element_pressed(self):
         self.mainWindowView.actionAdministration.triggered.connect(self.call_admin_window)
@@ -158,16 +170,44 @@ class ControlMainwindow:
             params = (self.saved_workflow, id_item, name)
             db.execute_query(query=statement, params=params)
             db.close()
+
+            wf_length = self.get_workflow_length(self.saved_workflow)
+
+            db = Database("databases/db_main.db")
+            db.connect()
+            query = f"UPDATE table_orders SET progress = ? WHERE name = ? AND id = ?"
+            params = (f"0/{wf_length}", name, id_item)
+
+            db.execute_query(query=query, params=params)
+
+            db.close()
+            wf_length_item = QTableWidgetItem(f"0/{wf_length}")
+            self.mainWindowView.tableWidget.setItem(row, 2, wf_length_item)
+            wf_length_item.setFlags(QtCore.Qt.ItemIsEnabled)
+
         elif self.current_mode == "distributeTasksMode":
             workflow_to_implement = self.mainWindowView.tableWidget.item(row, 3).text()
             item_name = self.mainWindowView.tableWidget.item(row, 1).text()
-            from view.py_test import TestTest
-            testi = TestTest()
-            testi.show()
+            self.control_distribute_task_tasks = ControlDistributeTask(self.model, self.view,
+                                                                       workflow_to_implement, item_name)
+
+    @staticmethod
+    def get_workflow_length(saved_workflow: str):
+
+        db = Database("databases/db_workflows.db")
+        db.connect()
+
+        query = f"SELECT COUNT(*) FROM {saved_workflow}"
+
+        wf_data = db.fetch_data(query)
+        db.close()
+        wf_length = wf_data[0][0]
+
+        return wf_length
+
 
     def delete_entry_from_table(self, integer_for: int):
         """ UI Handling of the deletion of an order """
-        print(f' printed this text ma man')
         self.mainWindowView.tableWidget.removeRow(self.row)
 
     def put_delete_dialog_back_to_none(self, integer: int):
@@ -177,13 +217,40 @@ class ControlMainwindow:
 
     def _input_data_at_start(self):
         """ MainWindow needs its entrances read from db and put into table. """
+        ## hier dann noch das feld rein, dass es das richtig in die table rein schiebt
         db = Database("databases/db_main.db")
         db.connect()
         statement = "SELECT * FROM table_orders WHERE deprecated = 0;"
         data = db.fetch_data(statement)
+        db.close()
         if data is not None:
             for element in data:
-                self._orders_from_db_in_tabular(element)
+                print(f'element from data = {element}')
+                old_progress = element[2]
+                new_progress = self.change_orders_acc_to_progress(element[1], element[2], element[3])
+                print(f'new_progress = {new_progress}')
+                new_element = (element[0], element[1], new_progress, element[3], element[4], element[5], element[6],
+                               element[7])
+                self._orders_from_db_in_tabular(new_element)
+
+                if new_progress != old_progress:
+                    db = Database("databases/db_main.db")
+                    db.connect()
+
+                    query = f"""UPDATE table_orders SET progress = ? WHERE name = ? AND workflow = ? AND deprecated = 0"""
+
+                    params = (new_progress, element[1], element[3])
+
+                    db.execute_query(query=query, params=params)
+
+                    db.close()
+
+
+
+    def change_orders_acc_to_progress(self, order_name: str, curr_progress: str, wf: str):
+        progress_tracker = ProgressTracking(order_name=order_name, curr_progress=curr_progress, wf=wf)
+        print(f'got here again')
+        return progress_tracker.curr_progress
 
     def _orders_from_db_in_tabular(self, element: tuple):
         """
@@ -195,9 +262,10 @@ class ControlMainwindow:
         self.rowCount += 1
         self.mainWindowView.tableWidget.setRowCount(self.rowCount)
         element_list = [element[0], element[1], element[2], element[3], element[4], element[5], element[6], element[7]]
+        print(f'element_list = {element_list}')
         i = 0
         for entry in element_list:
-            item = QTableWidgetItem(entry)
+            item = QTableWidgetItem(str(entry))
             self.mainWindowView.tableWidget.setItem(self.rowCount-1, i, item)
             item.setFlags(QtCore.Qt.ItemIsEnabled)
             i += 1

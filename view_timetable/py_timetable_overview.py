@@ -1,30 +1,28 @@
 from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import  QVBoxLayout, QMainWindow
-from timetable.dragdropwidget import DragDropWidget
+from PyQt5.QtWidgets import QVBoxLayout, QMainWindow
+from control_timetable.dragdropwidget import DragDropWidget
 
 
 class ViewTimetableMain(QMainWindow):
-    def __init__(self):
+    def __init__(self, model, user):
 
         super().__init__()
-
+        self.model = model
+        self.user = user
         loadUi("view_timetable/ui_files_timetable/timetable_main.ui", self)
-        #ToDo: set window modal
         self.setAcceptDrops(True)
+        self._name()
+
+
+        #ToDo: set window modal
+
         self.widget_list = [self.monday_widget, self.tuesday_widget, self.wednesday_widget, self.thursday_widget,
                             self.friday_widget]
 
-        for element in self.widget_list:
-            element.setAcceptDrops(True)
-            element.vertical_layout = QVBoxLayout()
 
-            for l in ['A', 'B', 'C', 'D', 'E']:
-                lbl = DragDropWidget(l)
-                lbl.setStyleSheet("border: 1px solid black; background-color: red;")
 
-                element.vertical_layout.addWidget(lbl)
-
-            element.setLayout(element.vertical_layout)
+    def _name(self):
+        self.top_label.setText(f'Weekly Timetable for employee {self.user}')
 
     def dragEnterEvent(self, event):
         event.acceptProposedAction()
@@ -98,3 +96,12 @@ class ViewTimetableMain(QMainWindow):
                 element.setLayout(element.vertical_layout)
 
                 event.accept()
+
+    def set_initial_date(self, current_week: list, current_week_index: int):
+        self.label_week_date.setText(f'Week: {current_week_index}')
+
+        self.label_monday.setText(f'Monday\n{current_week[0]}')
+        self.label_tuesday.setText(f'Tuesday\n{current_week[1]}')
+        self.label_wednesday.setText(f'Wednesday\n{current_week[2]}')
+        self.label_thursday.setText(f'Thursday\n{current_week[3]}')
+        self.label_friday.setText(f'Friday\n{current_week[4]}')

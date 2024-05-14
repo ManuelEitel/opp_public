@@ -31,7 +31,6 @@ class WFChoosingView(QMainWindow):
         self.table_list = []
 
     def handle_cell_click_fct(self, row, column):
-        mouse_button = QApplication.mouseButtons()
         self.distributed_workflow = self.tw_wf_choosing.item(row, column).text()
         self.cell_clicked_wf_choosing.emit(self.distributed_workflow)
         print(f'got here at emitting')
